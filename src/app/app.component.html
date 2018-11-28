@@ -1,8 +1,12 @@
-<h1>{{title}}</h1>
 <!--
+
+<h1>{{title}}</h1>
+
 <ul>
     <li *ngFor="let p of pokemons">{{p.name}}</li>
 </ul>
+
+
 
 <input type="text" #box (keyup)='onkey(box.value)'>
 <p>{{box.value}}</p>
@@ -11,5 +15,27 @@
 
  <input type="text" #box (keyup.enter)="values=box.value" (blur)="values=box.value">
  <p>{{values}}</p>
+
+
+ <p *ngIf="beta > 876">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit porro ab minima quae, itaque, quia eius voluptatum labore eum, exercitationem obcaecati ducimus fuga corrupti? Soluta molestias cumque sit pariatur. Ullam!</p>
+
  -->
-<p *ngIf="beta > 876">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit porro ab minima quae, itaque, quia eius voluptatum labore eum, exercitationem obcaecati ducimus fuga corrupti? Soluta molestias cumque sit pariatur. Ullam!</p>
+
+<h1 class='center'>Pokémons</h1>
+<div class='container'>
+<div class="row">
+<div *ngFor='let pokemon of pokemons' class="col s6 m4">
+  <div class="card horizontal" (click)="selectPokemon(pokemon)" pkmnBorderCard>
+    <div class="card-image">
+      <img [src]="pokemon.picture">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>{{ pokemon.name }}</p>
+        <p><small>{{ pokemon.created }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
