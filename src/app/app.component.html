@@ -9,5 +9,5 @@
 <p>{{value}}</p>
  -->
 
- <input type="text" #box (keyup.enter)="values=box.value">
+ <input type="text" #box (keyup.enter)="values=box.value" (blur)="values=box.value">
  <p>{{values}}</p>
