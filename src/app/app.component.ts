@@ -15,7 +15,8 @@ export class AppComponent implements OnInit  {
 
   title:string = "Liste des pokémons"
   //value:string =''
-  values:string =''
+  //values:string =''
+  beta:Number=900;
 
   ngOnInit(){
     this.pokemons = POKEMONS;

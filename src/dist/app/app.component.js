@@ -14,7 +14,8 @@ var AppComponent = /** @class */ (function () {
         this.pokemons = null;
         this.title = "Liste des pokémons";
         //value:string =''
-        this.values = '';
+        //values:string =''
+        this.beta = 900;
         /*
         onkey(value:string){
           this.value='bonjour '+value
