@@ -17,7 +17,7 @@ var BorderCardDirective = /** @class */ (function () {
         this.setHeight(180);
     }
     BorderCardDirective.prototype.onmouseenter = function () {
-        this.setBorder('#009688');
+        this.setBorder(this.borderColor || '#009688');
     };
     BorderCardDirective.prototype.onmouseleave = function () {
         this.setBorder('#f5f5f5');
@@ -29,6 +29,10 @@ var BorderCardDirective = /** @class */ (function () {
     BorderCardDirective.prototype.setHeight = function (height) {
         this.el.nativeElement.style.height = height + 'px';
     };
+    __decorate([
+        core_1.Input('pkmnBorderCard'),
+        __metadata("design:type", String)
+    ], BorderCardDirective.prototype, "borderColor", void 0);
     __decorate([
         core_1.HostListener('mouseenter'),
         __metadata("design:type", Function),
