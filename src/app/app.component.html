@@ -1,5 +1,9 @@
-<h1>Liste des pokémons</h1>
+<h1>{{title}}</h1>
 
 <ul>
     <li *ngFor="let p of pokemons">{{p.name}}</li>
 </ul>
+
+<input type="text" #box (keyup)='onkey(box.value)'>
+<p>{{box.value}}</p>
+<p>{{value}}</p>
