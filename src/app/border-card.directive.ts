@@ -5,17 +5,27 @@ import { on } from 'cluster';
   selector: '[pkmnBorderCard]' 
 })
 export class BorderCardDirective {
+
+    private initialColor:string = "#f5f5f5";
+    private defaultColor:string = "#009688";
+    private defaultHeight:number = 180;
+
+
 	constructor(private el: ElementRef) {
-		this.setBorder('#f5f5f5');
-		this.setHeight(180);
+		this.setBorder(this.initialColor);
+		this.setHeight(this.defaultHeight);
 	}
     @Input('pkmnBorderCard') borderColor : string; //alias
+    @Input() pkmnBorderCard : string; //sans alias
+
+
+
     @HostListener('mouseenter') onmouseenter(){
-        this.setBorder(this.borderColor || '#009688');
+        this.setBorder(this.borderColor || this.defaultColor);
     }
 
     @HostListener('mouseleave') onmouseleave(){
-        this.setBorder('#f5f5f5');
+        this.setBorder(this.initialColor);
     }
 
    
