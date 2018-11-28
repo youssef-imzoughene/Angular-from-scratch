@@ -1,5 +1,5 @@
 <h1>{{title}}</h1>
-
+<!--
 <ul>
     <li *ngFor="let p of pokemons">{{p.name}}</li>
 </ul>
@@ -7,3 +7,7 @@
 <input type="text" #box (keyup)='onkey(box.value)'>
 <p>{{box.value}}</p>
 <p>{{value}}</p>
+ -->
+
+ <input type="text" #box (keyup.enter)="values=box.value">
+ <p>{{values}}</p>

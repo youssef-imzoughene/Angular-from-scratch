@@ -9,12 +9,14 @@ import { POKEMONS } from './mock-pokemons';
 })
 export class AppComponent implements OnInit  { 
   
-  name = 'Angular';
+  //name = 'Angular';
 
   private pokemons:Pokemon[]=null; 
 
   title:string = "Liste des pokémons"
-  value:string =''
+  //value:string =''
+  values:string =''
+
   ngOnInit(){
     this.pokemons = POKEMONS;
   }
@@ -23,9 +25,9 @@ export class AppComponent implements OnInit  {
     alert("Vous avez cliqué sur "+pokemon.name);
   }
 
-
+  /*
   onkey(value:string){
     this.value='bonjour '+value
   }
-
+  */
 }
