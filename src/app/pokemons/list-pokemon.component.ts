@@ -6,7 +6,7 @@ import { POKEMONS } from './mock-pokemons';
 @Component({
   selector: 'list-pokemon',
   //template: `<h1>Hello youssef {{name}}</h1>`,
-  templateUrl:"./app/list-pokemon.component.html"
+  templateUrl:"./app/pokemons/list-pokemon.component.html"
 })
 export class ListPokemonComponent implements OnInit  { 
   
@@ -27,7 +27,7 @@ export class ListPokemonComponent implements OnInit  {
   }
 
   selectPokemon(pokemon:Pokemon){
-    alert("Vous avez cliqué sur "+pokemon.name);
+    //alert("Vous avez cliqué sur "+pokemon.name);
     let link = ['/pokemon',pokemon.id];
     this.router.navigate(link);
   }
