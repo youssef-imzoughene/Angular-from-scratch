@@ -11,7 +11,7 @@ import { PokemonFormComponent } from './pokemon-form.component';
 import { PokemonSearchComponent } from './search-pokemon.component';
 import { LoaderComponent } from './loader.component';
 
-
+import { AuthGuard } from '../auth-guard.service';
 
 import { BorderCardDirective } from './border-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
@@ -35,6 +35,6 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 		LoaderComponent,
 		PokemonTypeColorPipe
 	],
-	providers:[PokemonsService]
+	providers:[PokemonsService,AuthGuard]
 })
 export class PokemonsModule { }

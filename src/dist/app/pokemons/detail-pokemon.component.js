@@ -34,7 +34,7 @@ var DetailPokemonComponent = /** @class */ (function () {
         this.pokemonsService.getPokemon(id).subscribe(function (pokemon) { return _this.pokemon = pokemon; });
     };
     DetailPokemonComponent.prototype.goBack = function () {
-        this.router.navigate(['/pokemons']);
+        this.router.navigate(['/pokemon/list']);
     };
     DetailPokemonComponent.prototype.goEdit = function (pokemon) {
         var link = ['/pokemon/edit', pokemon.id];
