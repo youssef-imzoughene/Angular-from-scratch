@@ -7,11 +7,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var common_1 = require("@angular/common");
 var pokemons_routing_module_1 = require("./pokemons-routing.module");
 var pokemons_service_1 = require("./pokemons.service");
 var list_pokemon_component_1 = require("./list-pokemon.component");
 var detail_pokemon_component_1 = require("./detail-pokemon.component");
+var edit_pokemon_component_1 = require("./edit-pokemon.component");
+var pokemon_form_component_1 = require("./pokemon-form.component");
 var border_card_directive_1 = require("./border-card.directive");
 var pokemon_type_color_pipe_1 = require("./pokemon-type-color.pipe");
 var PokemonsModule = /** @class */ (function () {
@@ -21,11 +24,14 @@ var PokemonsModule = /** @class */ (function () {
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
-                pokemons_routing_module_1.PokemonRoutingModule
+                forms_1.FormsModule,
+                pokemons_routing_module_1.PokemonRoutingModule,
             ],
             declarations: [
                 list_pokemon_component_1.ListPokemonComponent,
                 detail_pokemon_component_1.DetailPokemonComponent,
+                edit_pokemon_component_1.EditPokemonComponent,
+                pokemon_form_component_1.PokemonFormComponent,
                 border_card_directive_1.BorderCardDirective,
                 pokemon_type_color_pipe_1.PokemonTypeColorPipe
             ],

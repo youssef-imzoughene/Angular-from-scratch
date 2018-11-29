@@ -34,6 +34,10 @@ var DetailPokemonComponent = /** @class */ (function () {
     DetailPokemonComponent.prototype.goBack = function () {
         this.router.navigate(['/pokemons']);
     };
+    DetailPokemonComponent.prototype.goEdit = function (pokemon) {
+        var link = ['/pokemon/edit', pokemon.id];
+        this.router.navigate(link);
+    };
     DetailPokemonComponent = __decorate([
         core_1.Component({
             selector: 'detail-pokemon',
