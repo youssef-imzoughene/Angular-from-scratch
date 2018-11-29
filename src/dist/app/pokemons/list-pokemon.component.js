@@ -11,19 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var mock_pokemons_1 = require("./mock-pokemons");
+//import { POKEMONS } from './mock-pokemons';
+var pokemons_service_1 = require("./pokemons.service");
 var ListPokemonComponent = /** @class */ (function () {
-    function ListPokemonComponent(router) {
+    function ListPokemonComponent(router, pokemonsService) {
         this.router = router;
+        this.pokemonsService = pokemonsService;
         //name = 'Angular';
         this.pokemons = null;
         this.title = "Liste des pokémons";
-        //value:string =''
-        //values:string =''
-        this.beta = 900;
     }
+    //value:string =''
+    //values:string =''
+    //beta:Number=900;
     ListPokemonComponent.prototype.ngOnInit = function () {
-        this.pokemons = mock_pokemons_1.POKEMONS;
+        //this.pokemons = POKEMONS;
+        this.pokemons = this.pokemonsService.getPokemons();
     };
     ListPokemonComponent.prototype.selectPokemon = function (pokemon) {
         //alert("Vous avez cliqué sur "+pokemon.name);
@@ -34,9 +37,10 @@ var ListPokemonComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'list-pokemon',
             //template: `<h1>Hello youssef {{name}}</h1>`,
-            templateUrl: "./app/pokemons/list-pokemon.component.html"
+            templateUrl: "./app/pokemons/list-pokemon.component.html",
+            providers: [pokemons_service_1.PokemonsService]
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, pokemons_service_1.PokemonsService])
     ], ListPokemonComponent);
     return ListPokemonComponent;
 }());
