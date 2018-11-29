@@ -38,7 +38,6 @@ var DetailPokemonComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'detail-pokemon',
             templateUrl: './app/pokemons/detail-pokemon.component.html',
-            providers: [pokemons_service_1.PokemonsService]
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router, pokemons_service_1.PokemonsService])
     ], DetailPokemonComponent);

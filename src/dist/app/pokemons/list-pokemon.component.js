@@ -38,7 +38,6 @@ var ListPokemonComponent = /** @class */ (function () {
             selector: 'list-pokemon',
             //template: `<h1>Hello youssef {{name}}</h1>`,
             templateUrl: "./app/pokemons/list-pokemon.component.html",
-            providers: [pokemons_service_1.PokemonsService]
         }),
         __metadata("design:paramtypes", [router_1.Router, pokemons_service_1.PokemonsService])
     ], ListPokemonComponent);
