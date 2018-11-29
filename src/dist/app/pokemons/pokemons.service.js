@@ -77,6 +77,15 @@ var PokemonsService = /** @class */ (function () {
         };
         return this.http.delete(url, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("deleted pokemon id=" + pokemon.id); }), operators_1.catchError(this.handleError('deletePokemon')));
     };
+    /* GET pokemons search */
+    PokemonsService.prototype.searchPokemons = function (term) {
+        var _this = this;
+        if (!term.trim()) {
+            // si le terme de recherche n'existe pas, on renvoie un tableau vide.
+            return rxjs_1.of([]);
+        }
+        return this.http.get(this.pokemonsUrl + "/?name=" + term).pipe(operators_1.tap(function (_) { return _this.log("found pokemons matching \"" + term + "\""); }), operators_1.catchError(this.handleError('searchPokemons', [])));
+    };
     PokemonsService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.HttpClient])
