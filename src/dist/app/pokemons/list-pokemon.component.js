@@ -25,8 +25,10 @@ var ListPokemonComponent = /** @class */ (function () {
     //values:string =''
     //beta:Number=900;
     ListPokemonComponent.prototype.ngOnInit = function () {
+        var _this = this;
         //this.pokemons = POKEMONS;
-        this.pokemons = this.pokemonsService.getPokemons();
+        //this.pokemons = this.pokemonsService.getPokemons();
+        this.pokemonsService.getPokemons().subscribe(function (pokemons) { return _this.pokemons = pokemons; });
     };
     ListPokemonComponent.prototype.selectPokemon = function (pokemon) {
         //alert("Vous avez cliqué sur "+pokemon.name);

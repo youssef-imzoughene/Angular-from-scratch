@@ -23,13 +23,15 @@ var DetailPokemonComponent = /** @class */ (function () {
     }
     DetailPokemonComponent.prototype.ngOnInit = function () {
         //this.pokemons = POKEMONS;
+        var _this = this;
         var id = +this.route.snapshot.paramMap.get('id');
         /*for (let i = 0; i < this.pokemons.length; i++) {
             if (this.pokemons[i].id == id) {
                 this.pokemon = this.pokemons[i];
             }
         }*/
-        this.pokemon = this.pokemonsService.getPokemon(id);
+        //this.pokemon = this.pokemonsService.getPokemon(id);
+        this.pokemonsService.getPokemon(id).subscribe(function (pokemon) { return _this.pokemon = pokemon; });
     };
     DetailPokemonComponent.prototype.goBack = function () {
         this.router.navigate(['/pokemons']);

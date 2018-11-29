@@ -1,8 +1,14 @@
 import { NgModule }  from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { PokemonsModule } from './pokemons/pokemons.module';
+
+import { InMemoryDataService } from './in-memory-data.service';
+
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent }  from './app.component';
 //import { ListPokemonComponent }  from './pokemons/list-pokemon.component';
@@ -15,9 +21,11 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 @NgModule({
   imports:      [ BrowserModule ,
+                  HttpClientModule,
+                  HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,{dataEncapsulation:false}),
                   PokemonsModule,
-                  AppRoutingModule
-                  
+                  AppRoutingModule,
+                 
                 ],
   declarations: [ AppComponent,
                   //BorderCardDirective,
@@ -25,6 +33,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
                   //ListPokemonComponent,
                   //DetailPokemonComponent,
                   PageNotFoundComponent,
+                  
                   
                 ],
   bootstrap:    [ AppComponent ]

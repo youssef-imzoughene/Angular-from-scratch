@@ -9,7 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_routing_module_1 = require("./app-routing.module");
+var http_1 = require("@angular/common/http");
 var pokemons_module_1 = require("./pokemons/pokemons.module");
+var in_memory_data_service_1 = require("./in-memory-data.service");
+var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var app_component_1 = require("./app.component");
 //import { ListPokemonComponent }  from './pokemons/list-pokemon.component';
 //import { DetailPokemonComponent }  from './pokemons/detail-pokemon.component';
@@ -22,8 +25,10 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule,
+                http_1.HttpClientModule,
+                angular_in_memory_web_api_1.HttpClientInMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService, { dataEncapsulation: false }),
                 pokemons_module_1.PokemonsModule,
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
             ],
             declarations: [app_component_1.AppComponent,
                 //BorderCardDirective,
