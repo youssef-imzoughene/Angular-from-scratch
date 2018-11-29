@@ -40,6 +40,11 @@ var DetailPokemonComponent = /** @class */ (function () {
         var link = ['/pokemon/edit', pokemon.id];
         this.router.navigate(link);
     };
+    DetailPokemonComponent.prototype.delete = function (pokemon) {
+        var _this = this;
+        this.pokemonsService.deletePokemon(pokemon)
+            .subscribe(function (_) { return _this.goBack(); });
+    };
     DetailPokemonComponent = __decorate([
         core_1.Component({
             selector: 'detail-pokemon',

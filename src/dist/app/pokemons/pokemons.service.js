@@ -68,6 +68,15 @@ var PokemonsService = /** @class */ (function () {
         };
         return this.http.put(this.pokemonsUrl, pokemon, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("updated pokemon id=" + pokemon.id); }), operators_1.catchError(this.handleError('updatePokemon')));
     };
+    /** DELETE pokemon */
+    PokemonsService.prototype.deletePokemon = function (pokemon) {
+        var _this = this;
+        var url = this.pokemonsUrl + "/" + pokemon.id;
+        var httpOptions = {
+            headers: new http_1.HttpHeaders({ 'Content-Type': 'application/json' })
+        };
+        return this.http.delete(url, httpOptions).pipe(operators_1.tap(function (_) { return _this.log("deleted pokemon id=" + pokemon.id); }), operators_1.catchError(this.handleError('deletePokemon')));
+    };
     PokemonsService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.HttpClient])
